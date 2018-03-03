@@ -6,7 +6,7 @@
         <module>e3-manager-dao</module>
         <module>e3-manager-interface</module>
         <module>e3-manager-service</module>
-        <module>e3-manager-web</module>
+        <!--<module>e3-manager-web</module>-->
     </modules>
     <parent>
         <groupId>cn.e3mall</groupId>
@@ -22,6 +22,30 @@
             <artifactId>e3-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!-- dubbo相关 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+
     </dependencies>
     <!-- 配置tomcat插件 -->
     <build>
